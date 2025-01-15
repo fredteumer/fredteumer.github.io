@@ -6,60 +6,60 @@
     <title>fredt.io</title>
     <style>
         body {
-            background: url('./img/mobo-background.jpg') no-repeat center center fixed; background-size: cover;
-						font-family: monospace;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+          background: url('./img/mobo-background.jpg') no-repeat center center fixed; background-size: cover;
+		      font-family: monospace;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
         }
 
         .terminal {
-            background-color: black;
-            color: green;
-            width: 80%;
-            max-width: 600px;
-            height: 500px;
-            border-radius: 5px;
-            padding: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-						font-size: 18px;
-						overflow-x: hidden;
+          background-color: black;
+          color: green;
+          width: 80%;
+          max-width: 600px;
+          height: 500px;
+          border-radius: 5px;
+          padding: 15px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          overflow-y: auto;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+					font-size: 18px;
+					overflow-x: hidden;
         }
 
         .terminal-content {
-            flex-grow: 1;
+          flex-grow: 1;
         }
 
         .terminal-input {
-            color: green;
-            background: none;
-            border: none;
-            width: 100%;
-            outline: none;
-            font-size: 22px;
-            font-family: monospace;
+          color: green;
+          background: none;
+          border: none;
+          width: 100%;
+          outline: none;
+          font-size: 22px;
+          font-family: monospace;
         }
 
         a {
-            color: lightblue;
-            text-decoration: underline;
+          color: lightblue;
+          text-decoration: underline;
         }
 
         a:hover {
-            text-decoration: underline;
+          text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="terminal">
-        <div class="terminal-content" id="terminalContent">
-        	<pre>Welcome to srcOS.
+  <div class="terminal">
+    <div class="terminal-content" id="terminalContent">
+      <pre>Welcome to srcOS.
 
 LINKS
 <a href="./index.html" target=_blank">Home</a>
@@ -78,38 +78,38 @@ Type 'help' for options</pre>
     </div>
 
     <script>
-        const links = {
-            home: '/',
-            github: 'https://github.com',
-            twitter: 'https://twitter.com',
-            youtube: 'https://youtube.com',
-						linkedin: 'https://linkedin.com/fredteumer
-        };
-				const contacts = {
-						email: 'mailto:fredteumer@gmail.com'
-						discord: ''
-						Telegram: ''
-				};
+      const refs = {
+	      home: './index.html',
+        github: 'https://github.com',
+        twitter: 'https://twitter.com',
+        youtube: 'https://youtube.com',
+	      linkedin: 'https://linkedin.com/fredteumer',
+      };
+	    const contacts = {
+		    email: 'mailto:fredteumer@gmail.com',
+		    discord: '',
+		    Telegram: '',
+      };
 
-        const terminalInput = document.getElementById('terminalInput');
-        const terminalContent = document.getElementById('terminalContent');
+      const terminalInput = document.getElementById('terminalInput');
+      const terminalContent = document.getElementById('terminalContent');
 
-        terminalInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                const command = terminalInput.value.trim().toLowerCase();
-                terminalInput.value = '';
+      terminalInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const command = terminalInput.value.trim().toLowerCase();
+          terminalInput.value = '';
 
-                if (command === 'help') {
-                    terminalContent.innerHTML += '\nOptions:\nHome\nGitHub\nTwitter\nYouTube\n';
-                } else if (links[command]) {
-                    window.location.href = links[command];
-                } else {
-                    terminalContent.innerHTML += "\n404 NOT FOUND. Type 'help' for options.";
-                }
+          if (command === 'help') {
+            terminalContent.innerHTML += '\nOptions:\nHome\nGitHub\nTwitter\nYouTube\n';
+          } else if (refs[command]) {
+            window.location.href = refs[command];
+          } else {
+            terminalContent.innerHTML += "\n404 NOT FOUND. Type 'help' for options.";
+          }
 
-                terminalContent.scrollTop = terminalContent.scrollHeight;
-            }
-        });
+          terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+      });
     </script>
 </body>
 </html>
