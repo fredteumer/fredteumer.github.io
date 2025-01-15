@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fredt.io</title>
+    <style>
+        body {
+            background: url('./img/mobo-background.jpg') no-repeat center center fixed; background-size: cover;
+						font-family: monospace;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .terminal {
+            background-color: black;
+            color: green;
+            width: 80%;
+            max-width: 600px;
+            height: 500px;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+						font-size: 18px;
+						overflow-x: hidden;
+        }
+
+        .terminal-content {
+            flex-grow: 1;
+        }
+
+        .terminal-input {
+            color: green;
+            background: none;
+            border: none;
+            width: 100%;
+            outline: none;
+            font-size: 22px;
+            font-family: monospace;
+        }
+
+        a {
+            color: lightblue;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-content" id="terminalContent">
+        	<pre>Welcome to srcOS.
+
+LINKS
+<a href="./index.html" target=_blank">Home</a>
+<a href="https://github.com" target="_blank">GitHub</a>
+<a href="https://twitter.com" target="_blank">Twitter</a>
+<a href="https://youtube.com" target="_blank">YouTube</a>
+				
+CONTACT
+<a href="mailto:fredteumer@gmail.com">Email</a>
+<a href="">Discord</a>
+<a href="">Telegram</a>
+
+Type 'help' for options</pre>
+        </div>
+				<input type="text" class="terminal-input" id="terminalInput" placeholder="$ Input option...">
+    </div>
+
+    <script>
+        const links = {
+            home: '/',
+            github: 'https://github.com',
+            twitter: 'https://twitter.com',
+            youtube: 'https://youtube.com',
+						linkedin: 'https://linkedin.com/fredteumer
+        };
+				const contacts = {
+						email: 'mailto:fredteumer@gmail.com'
+						discord: ''
+						Telegram: ''
+				};
+
+        const terminalInput = document.getElementById('terminalInput');
+        const terminalContent = document.getElementById('terminalContent');
+
+        terminalInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const command = terminalInput.value.trim().toLowerCase();
+                terminalInput.value = '';
+
+                if (command === 'help') {
+                    terminalContent.innerHTML += '\nOptions:\nHome\nGitHub\nTwitter\nYouTube\n';
+                } else if (links[command]) {
+                    window.location.href = links[command];
+                } else {
+                    terminalContent.innerHTML += "\n404 NOT FOUND. Type 'help' for options.";
+                }
+
+                terminalContent.scrollTop = terminalContent.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
