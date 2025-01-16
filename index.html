@@ -134,17 +134,16 @@ Type 'help' or 'options' for available options.</pre>
         
           terminalContent.innerHTML += '<p style="color: white;">$ '+command+'</p>'; // echo the command back, like a real terminal 
           if (command === 'help' || command === 'opt' || command === 'options' || command === 'h') {
-            terminalContent.innerHTML += '<p>Available Commands:</p><p>help, h, options, opt: List available options.</p>'
-            terminalContent.innerHTML += '<p><a href="https://grove.city">work</a>, <a href="https://grove.city">grove</a>: Check out Grove.</p>'
-            terminalContent.innerHTML += '<p><a href="https://pokt.network">pocket</a>, <a href="https://pokt.network">pokt</a>: Learn more about Pocket Network.</p>'
-            terminalContent.innerHTML += '<p><a href="https://github.com/fredteumer">github</a>, <a href="https://github.com/fredteumer">gh</a>: View my code and contributions on GitHub.</p>'
-            terminalContent.innerHTML += '<p><a href="https://x.com/fredt_io">x</a>: Doomscroll my X.</p>'
-            terminalContent.innerHTML += '<p><a href="https://youtube.com/@fredt_io">youtube</a>, <a href="https://youtube.com/@fredt_io">yt</a>: Please subscribe to my YouTube channel.</p>'
-            terminalContent.innerHTML += '<p><a href="https://linkedin.com/in/fredteumer">linkedin</a>, <a href="https://linkedin.com/in/fredteumer">li</a>: Online Resume.</p>'
-            terminalContent.innerHTML += '<p><a href="https://x.com/fredt_io>x</a>: Doomscroll my X.</p>'
-            terminalContent.innerHTML += '<p><a href="mailto:fredteumer@gmail.com">email</a>: Send me an email.</p>'
-            terminalContent.innerHTML += '<p><a href="https://t.me/fredt_io">telegram</a>, <a href="https://t.me/fredt_io">tg</a>: Contact me on Telegram.</p>'
-            terminalContent.innerHTML += '<p><a href="https://discordapp.com/users/961425936929132635">discord</a>: DM me on Discord.</p>'
+            terminalContent.innerHTML += '<p>Available Options:</p><p>ℹ help, h, options, opt: List available options.</p>'
+            terminalContent.innerHTML += '<p>🌿 <a href="https://grove.city">work</a>, <a href="https://grove.city">grove</a>: Check out Grove.</p>'
+            terminalContent.innerHTML += '<p>🪙 <a href="https://pokt.network">pocket</a>, <a href="https://pokt.network">pokt</a>: Learn more about Pocket Network.</p>'
+            terminalContent.innerHTML += '<p>💻 <a href="https://github.com/fredteumer">github</a>, <a href="https://github.com/fredteumer">gh</a>: View my code and contributions on GitHub.</p>'
+            terminalContent.innerHTML += '<p>📱 <a href="https://x.com/fredt_io">x</a>: Doomscroll my X.</p>'
+            terminalContent.innerHTML += '<p>📺 <a href="https://youtube.com/@fredt_io">youtube</a>, <a href="https://youtube.com/@fredt_io">yt</a>: Please subscribe to my YouTube channel.</p>'
+            terminalContent.innerHTML += '<p>📄 <a href="https://linkedin.com/in/fredteumer">linkedin</a>, <a href="https://linkedin.com/in/fredteumer">li</a>: Online Resume.</p>'
+            terminalContent.innerHTML += '<p>📧 <a href="mailto:fredteumer@gmail.com">email</a>: Send me an email.</p>'
+            terminalContent.innerHTML += '<p>💬 <a href="https://t.me/fredt_io">telegram</a>, <a href="https://t.me/fredt_io">tg</a>: Contact me on Telegram.</p>'
+            terminalContent.innerHTML += '<p>👋 <a href="https://discordapp.com/users/961425936929132635">discord</a>: DM me on Discord.</p>'
           } else if (refs[command]) {
             window.location.href = refs[command];
           } else {
