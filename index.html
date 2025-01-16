@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fredt.io</title>
+    <link rel="icon" type="image/x-icon" href="./img/pokt-punk.png">
+
     <style>
       body {
         background: url('./img/mobo-background.jpg') no-repeat center center fixed; background-size: cover;
@@ -62,7 +64,7 @@
       }
 
       .terminal-input {
-        color: green;
+        color: white;
         background: none;
         border: none;
         width: 100%;
@@ -88,25 +90,16 @@
     </style>
   </head>
   <body>
+    <div style="text-align: center; margin-bottom: 10px;">
+      <img src="./img/headshot.jpg" alt="Fred Teumer" style="width: 100px; height: 100px; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+    </div>
     <div class="terminal-header" id="terminalHeader">
       <span>Terminal</span>
     </div> 
     <div class="terminal">
       <div class="terminal-content" id="terminalContent">
         <pre>Welcome to fredt.io.
-<!--
-LINKS
-<a href="./index.html">Home</a>
-<a href="https://github.com/fredteumer">GitHub</a>
-<a href="https://x.com/fredt_io">X</a>
-<a href="https://youtube.com/fredt_io">YouTube</a>
-<a href="https://linkedin.com/fredteumer">LinkedIn</a>
 
-CONTACT
-<a href="mailto:fredteumer@gmail.com">Email</a>
-<a href="https://discordapp.com/users/961425936929132635">Discord</a>
-<a href="https://t.me/fredt_io">Telegram</a>
--->
 Type 'help' or 'opt' to list available commands.</pre>
       </div>
       <input type="text" class="terminal-input" id="terminalInput" placeholder="$ Input option...">
@@ -139,7 +132,7 @@ Type 'help' or 'opt' to list available commands.</pre>
           const command = terminalInput.value.trim().toLowerCase();
           terminalInput.value = '';
         
-          terminalContent.innerHTML += '<p text-color="white">$ '+command+'</p>'; // echo the command back, like a real terminal 
+          terminalContent.innerHTML += '<p style="color: white;">$ '+command+'</p>'; // echo the command back, like a real terminal 
           if (command === 'help' || command === 'opt' || command === 'options' || command === 'h') {
             terminalContent.innerHTML += '<p>Available Commands:</p><p>help, h, options, opt: List available commands.</p>'
             terminalContent.innerHTML += '<p><a href="https://grove.city">work</a>, <a href="https://grove.city">grove</a>: Check out Grove.</p>'
@@ -155,7 +148,7 @@ Type 'help' or 'opt' to list available commands.</pre>
           } else if (refs[command]) {
             window.location.href = refs[command];
           } else {
-            terminalContent.innerHTML += "<p>404 NOT FOUND. Type 'help' for options.</p>";
+            terminalContent.innerHTML += "<p><div style=\"color: red;\">404 NOT FOUND</div>. Type 'help' for options.</p>";
           }
 
           terminalContent.scrollTop = terminalContent.scrollHeight;
