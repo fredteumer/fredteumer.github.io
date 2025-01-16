@@ -79,6 +79,12 @@
       a:hover {
         text-decoration: underline;
       }
+
+      p {
+        margin-top: 0;      
+        margin-bottom: 5px;
+        line-height: 1;
+      }
     </style>
   </head>
   <body>
@@ -87,35 +93,42 @@
     </div> 
     <div class="terminal">
       <div class="terminal-content" id="terminalContent">
-        <pre>Welcome to fredt.io@srcOS.
-
+        <pre>Welcome to fredt.io.
+<!--
 LINKS
 <a href="./index.html">Home</a>
-<a href="https://github.com">GitHub</a>
-<a href="https://twitter.com">Twitter</a>
-<a href="https://youtube.com">YouTube</a>
-<a href="https://linkedin.com/fredteumer">YouTube</a>
+<a href="https://github.com/fredteumer">GitHub</a>
+<a href="https://x.com/fredt_io">X</a>
+<a href="https://youtube.com/fredt_io">YouTube</a>
+<a href="https://linkedin.com/fredteumer">LinkedIn</a>
 
 CONTACT
 <a href="mailto:fredteumer@gmail.com">Email</a>
 <a href="https://discordapp.com/users/961425936929132635">Discord</a>
 <a href="https://t.me/fredt_io">Telegram</a>
-
-Type 'help' for options</pre>
+-->
+Type 'help' or 'opt' to list available commands.</pre>
       </div>
       <input type="text" class="terminal-input" id="terminalInput" placeholder="$ Input option...">
     </div>
 
     <script>
       const refs = {
-        home: './index.html',
-        github: 'https://github.com',
-        twitter: 'https://twitter.com',
-        youtube: 'https://youtube.com',
-        linkedin: 'https://linkedin.com/fredteumer',
+        github: 'https://github.com/fredteumer',
+        gh: 'https://github.com/fredteumer',
+        x: 'https://x.com/fredt_io',
+        youtube: 'https://youtube.com/https://www.youtube.com/@fredt_io',
+        yt: 'https://youtube.com/https://www.youtube.com/@fredt_io',
+        linkedin: 'https://linkedin.com/in/fredteumer',
+        li: 'https://linkedin.com/in/fredteumer',
         email: 'mailto:fredteumer@gmail.com',
         telegram: 'https://t.me/fredt_io',
-        discord: 'https://discordapp.com/users/961425936929132635'
+        tg: 'https://t.me/fredt_io',
+        discord: 'https://discordapp.com/users/961425936929132635',
+        pocket: 'https://pokt.network',
+        pokt: 'https://pokt.network',
+        work: 'https://grove.city',
+        grove: 'https://grove.city'
       };
 
       const terminalInput = document.getElementById('terminalInput');
@@ -125,13 +138,24 @@ Type 'help' for options</pre>
         if (e.key === 'Enter') {
           const command = terminalInput.value.trim().toLowerCase();
           terminalInput.value = '';
-
-          if (command === 'help') {
-            terminalContent.innerHTML += '\nOptions:\nHome\nGitHub\nTwitter\nYouTube\n';
+        
+          terminalContent.innerHTML += '<p text-color="white">$ '+command+'</p>'; // echo the command back, like a real terminal 
+          if (command === 'help' || command === 'opt' || command === 'options' || command === 'h') {
+            terminalContent.innerHTML += '<p>Available Commands:</p><p>help, h, options, opt: List available commands.</p>'
+            terminalContent.innerHTML += '<p><a href="https://grove.city">work</a>, <a href="https://grove.city">grove</a>: Check out Grove.</p>'
+            terminalContent.innerHTML += '<p><a href="https://pokt.network">pocket</a>, <a href="https://pokt.network">pokt</a>: Learn more about Pocket Network.</p>'
+            terminalContent.innerHTML += '<p><a href="https://github.com/fredteumer">github</a>, <a href="https://github.com/fredteumer">gh</a>: View my code and contributions on GitHub.</p>'
+            terminalContent.innerHTML += '<p><a href="https://x.com/fredt_io">x</a>: Doomscroll my X.</p>'
+            terminalContent.innerHTML += '<p><a href="https://youtube.com/@fredt_io">youtube</a>, <a href="https://youtube.com/@fredt_io">yt</a>: Please subscribe to my YouTube channel.</p>'
+            terminalContent.innerHTML += '<p><a href="https://linkedin.com/in/fredteumer">linkedin</a>, <a href="https://linkedin.com/in/fredteumer">li</a>: Online Resume.</p>'
+            terminalContent.innerHTML += '<p><a href="https://x.com/fredt_io>x</a>: Doomscroll my X.</p>'
+            terminalContent.innerHTML += '<p><a href="mailto:fredteumer@gmail.com">email</a>: Send me an email.</p>'
+            terminalContent.innerHTML += '<p><a href="https://t.me/fredt_io">telegram</a>, <a href="https://t.me/fredt_io">tg</a>: Contact me on Telegram.</p>'
+            terminalContent.innerHTML += '<p><a href="https://discordapp.com/users/961425936929132635">discord</a>: DM me on Discord.</p>'
           } else if (refs[command]) {
             window.location.href = refs[command];
           } else {
-            terminalContent.innerHTML += "\n404 NOT FOUND. Type 'help' for options.";
+            terminalContent.innerHTML += "<p>404 NOT FOUND. Type 'help' for options.</p>";
           }
 
           terminalContent.scrollTop = terminalContent.scrollHeight;
