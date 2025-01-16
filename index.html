@@ -22,16 +22,18 @@
         width: 80%;
         max-width: 600px;
         height: 500px;
-        border-radius: 5px;
-        padding: 15px;
+        margin: 0 auto;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        overflow-y: auto;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        overflow-y: auto;
         position: relative;
-        font-size: 18px;
+        font-size: 12px;
         overflow-x: hidden;
+        z-index: 0;
+        padding: 10px;
       }
 
       .terminal-header {
@@ -47,9 +49,10 @@
         display: flex;
         align-items: center;
         padding: 0 10px;
-        font-size: 20px;
+        font-size: 14px;
         position: relative;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+        z-index: 1;
       }
 
       .terminal-content {
@@ -90,11 +93,12 @@ LINKS
 <a href="https://github.com">GitHub</a>
 <a href="https://twitter.com">Twitter</a>
 <a href="https://youtube.com">YouTube</a>
+<a href="https://linkedin.com/fredteumer">YouTube</a>
 
 CONTACT
 <a href="mailto:fredteumer@gmail.com">Email</a>
-<a href="">Discord</a>
-<a href="">Telegram</a>
+<a href="https://discordapp.com/users/961425936929132635">Discord</a>
+<a href="https://t.me/fredt_io">Telegram</a>
 
 Type 'help' for options</pre>
       </div>
@@ -108,11 +112,9 @@ Type 'help' for options</pre>
         twitter: 'https://twitter.com',
         youtube: 'https://youtube.com',
         linkedin: 'https://linkedin.com/fredteumer',
-      };
-      const contacts = {
         email: 'mailto:fredteumer@gmail.com',
-        discord: '',
-        Telegram: '',
+        telegram: 'https://t.me/fredt_io',
+        discord: 'https://discordapp.com/users/961425936929132635'
       };
 
       const terminalInput = document.getElementById('terminalInput');
