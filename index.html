@@ -13,6 +13,7 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
+        flex-direction: column;
       }
 
       .terminal {
@@ -34,21 +35,26 @@
       }
 
       .terminal-header {
-        background-color: #333;
-        color: white;
+        background-color: #DDD;
+        color: black;
+        font-weight: bold;
         height: 25px;
-        width: 100%;
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         display: flex;
         align-items: center;
         padding: 0 10px;
-        font-size: 12px;
+        font-size: 20px;
         position: relative;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
 
       .terminal-content {
         flex-grow: 1;
+        overflow-y: auto;
       }
 
       .terminal-input {
@@ -73,12 +79,9 @@
   </head>
   <body>
     <div class="terminal-header" id="terminalHeader">
-      <p>Terminal - srcOS</p>
+      <span>Terminal - srcOS</span>
     </div> 
     <div class="terminal">
-      <div class="terminal-header" id="terminalHeader">
-        <p>Terminal - srcOS</p>
-      </div> 
       <div class="terminal-content" id="terminalContent">
         <pre>Welcome to srcOS.
 
