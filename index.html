@@ -91,7 +91,7 @@
   </head>
   <body>
     <div style="text-align: center; margin-bottom: 10px;">
-      <img src="./img/headshot.jpg" alt="Fred Teumer" style="width: 100px; height: 100px; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
+      <img src="./img/pokt-punk.png" alt="Fred Teumer" style="width: 100px; height: 100px; border-radius: 50%; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);">
     </div>
     <div class="terminal-header" id="terminalHeader">
       <span>Terminal</span>
@@ -100,7 +100,7 @@
       <div class="terminal-content" id="terminalContent">
         <pre>Welcome to fredt.io.
 
-Type 'help' or 'opt' to list available commands.</pre>
+Type 'help' or 'options' for available options.</pre>
       </div>
       <input type="text" class="terminal-input" id="terminalInput" placeholder="$ Input option...">
     </div>
@@ -134,7 +134,7 @@ Type 'help' or 'opt' to list available commands.</pre>
         
           terminalContent.innerHTML += '<p style="color: white;">$ '+command+'</p>'; // echo the command back, like a real terminal 
           if (command === 'help' || command === 'opt' || command === 'options' || command === 'h') {
-            terminalContent.innerHTML += '<p>Available Commands:</p><p>help, h, options, opt: List available commands.</p>'
+            terminalContent.innerHTML += '<p>Available Commands:</p><p>help, h, options, opt: List available options.</p>'
             terminalContent.innerHTML += '<p><a href="https://grove.city">work</a>, <a href="https://grove.city">grove</a>: Check out Grove.</p>'
             terminalContent.innerHTML += '<p><a href="https://pokt.network">pocket</a>, <a href="https://pokt.network">pokt</a>: Learn more about Pocket Network.</p>'
             terminalContent.innerHTML += '<p><a href="https://github.com/fredteumer">github</a>, <a href="https://github.com/fredteumer">gh</a>: View my code and contributions on GitHub.</p>'
